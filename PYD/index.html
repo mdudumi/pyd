@@ -156,7 +156,15 @@
   <footer class="w-full bg-blue-900 dark:bg-gray-900 text-gray-100 dark:text-gray-400 text-center py-4 px-6 padding-responsive">
     <span data-i18n="footer">&copy; 2025 Plan Your Day. All rights reserved.</span>
   </footer>
-    <!-- App logic: IndexedDB and UI integration -->
+
+  <script src="js/script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registered'));
+    }
+  </script>
+      <!-- App logic: IndexedDB and UI integration -->
 <script>
 const DB_NAME = 'pydPlanner';
 const DB_VERSION = 1;
@@ -250,12 +258,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-  <script src="js/script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log('Service Worker registered'));
-    }
-  </script>
 </body>
 </html>
