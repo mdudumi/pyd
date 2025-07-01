@@ -34,8 +34,47 @@
       <h1 class="header-title text-3xl font-extrabold text-white" data-i18n="heading">
         Plan Your Day - Spiritual Growth
       </h1>
+      <button id="install-btn"
+        class="hidden p-2 rounded-md bg-green-500 text-white hover:bg-green-600 focus:outline-none transition">
+  Install App
+</button>
+
+<script>
+  let deferredPrompt;
+  const installBtn = document.getElementById('install-btn');
+
+  // 1. Listen for the beforeinstallprompt event
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI to show the install button
+    installBtn.classList.remove('hidden');
+  });
+
+  // 2. When the user clicks the install button
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log('User response to the install prompt:', outcome);
+    // Hide the button since it can't be used again
+    installBtn.classList.add('hidden');
+    // Clear the saved prompt
+    deferredPrompt = null;
+  });
+
+  // 3. Optional: You can listen for the appinstalled event
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA was installed');
+  });
+</script>
       <div class="flex items-center space-x-2 relative">
         <!-- Mobile menu button -->
+        
         <button id="menu-btn" class="menu-button p-2 text-white focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
