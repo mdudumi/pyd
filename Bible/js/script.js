@@ -1,4 +1,3 @@
---- **script.js** ---
 // Initialization
 window.addEventListener('DOMContentLoaded', () => {
   loadTodayActivities();
