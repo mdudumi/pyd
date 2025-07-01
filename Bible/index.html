@@ -6,21 +6,22 @@
   <title>Biblical Planner</title>
 
   <!-- PWA Meta -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#1e40af" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
 
   <!-- Production Tailwind CSS (pre-compiled) -->
-  <link rel="stylesheet" href="dist/styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
 
   <!-- FullCalendar CSS & JS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
   <header class="bg-blue-900 text-white py-4 shadow-lg">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold">Biblical Planner</h1>
@@ -35,6 +36,7 @@
     </div>
   </header>
 
+  <!-- Main -->
   <main class="container mx-auto p-6 space-y-8">
     <!-- Dashboard -->
     <section id="dashboard" class="bg-white rounded-lg shadow-lg p-6">
@@ -67,11 +69,12 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gray-200 text-gray-700 py-4 mt-8">
     <div class="container mx-auto text-center text-sm">&copy; 2025 Biblical Planner</div>
   </footer>
 
-  <!-- Modals & Overlay -->
+  <!-- Overlay -->
   <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
   <!-- Plan Modal -->
@@ -80,10 +83,25 @@
       <button id="close-plan" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">✕</button>
       <h3 class="text-xl font-semibold mb-4">New Plan</h3>
       <form id="form-plan" class="space-y-4">
-        <label class="block"><span class="font-medium">Title</span><input type="text" id="plan-title" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required /></label>
-        <label class="block"><span class="font-medium">Type</span><select id="plan-type" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2"><option value="reading">Bible Reading</option><option value="prayer">Prayer</option></select></label>
-        <label class="block"><span class="font-medium">Date & Time</span><input type="datetime-local" id="plan-datetime" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required /></label>
-        <div class="flex justify-end space-x-3"><button type="button" id="cancel-plan" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Cancel</button><button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save</button></div>
+        <label class="block">
+          <span class="font-medium">Title</span>
+          <input type="text" id="plan-title" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required />
+        </label>
+        <label class="block">
+          <span class="font-medium">Type</span>
+          <select id="plan-type" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="reading">Bible Reading</option>
+            <option value="prayer">Prayer</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="font-medium">Date & Time</span>
+          <input type="datetime-local" id="plan-datetime" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required />
+        </label>
+        <div class="flex justify-end space-x-3">
+          <button type="button" id="cancel-plan" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save</button>
+        </div>
       </form>
     </div>
   </div>
@@ -94,13 +112,30 @@
       <button id="close-contact" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">✕</button>
       <h3 class="text-xl font-semibold mb-4">New Contact</h3>
       <form id="form-contact" class="space-y-4">
-        <label class="block"><span class="font-medium">Name</span><input type="text" id="contact-name" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required /></label>
-        <label class="block"><span class="font-medium">Phone/Email</span><input type="text" id="contact-info" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required /></label>
-        <div class="flex justify-end space-x-3"><button type="button" id="cancel-contact" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Cancel</button><button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Save</button></div>
+        <label class="block">
+          <span class="font-medium">Name</span>
+          <input type="text" id="contact-name" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required />
+        </label>
+        <label class="block">
+          <span class="font-medium">Phone/Email</span>
+          <input type="text" id="contact-info" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2" required />
+        </label>
+        <div class="flex justify-end space-x-3">
+          <button type="button" id="cancel-contact" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Save</button>
+        </div>
       </form>
     </div>
   </div>
 
+  <!-- Register Service Worker & Main Script -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registered', reg))
+        .catch(err => console.error('SW failed', err));
+    }
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
