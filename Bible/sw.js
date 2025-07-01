@@ -1,12 +1,12 @@
 const CACHE_NAME = 'biblical-planner-v1';
 const ASSETS = [
   '/',
-  '/index.html',
-  'css/styles.css',
+  'index.html',
+  'dist/styles.css',
   'js/script.js',
-  '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  'manifest.json',
+  'icons/icon-192x192.png',
+  'icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
