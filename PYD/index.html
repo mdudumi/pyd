@@ -14,8 +14,14 @@
     .flag-group { display: flex; gap: 0.5rem; }
     /* Force all form text to black */
     input, select { color: #000 !important; }
-    /* Make saved task titles white */
-    #task-list .task-title { color: #ffffff !important; }
+/* Make saved task titles white */
+    #task-list li .task-title {
+      color: #fff !important;
+    }
+    /* Fallback: any list item text white */
+    #task-list li {
+      color: #fff !important;
+    }
     /* Dark mode task list background */
     .dark #task-list { background-color: #2d2d2d; }
     /* Mobile adjustments */
