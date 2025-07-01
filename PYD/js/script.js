@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <input type="checkbox" ${t.done ? 'checked' : ''} class="h-6 w-6 mt-1"/>
         <div class="space-y-2">
           <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold ${t.done ? 'line-through' : ''}">${t.text}</h3>
+            <h3 class="text-lg font-semibold ${t.done ? 'line-through' : ''}" color: #ffffff !important>${t.text}</h3>
             <div class="flex space-x-3 text-2xl">
               <button data-act="note">📝</button>
               <button data-act="del" class="text-red-500">🗑️</button>
