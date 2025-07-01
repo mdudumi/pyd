@@ -6,15 +6,15 @@
   <title>Biblical Planner</title>
 
   <!-- PWA Meta -->
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/Bible/manifest.json" />
   <meta name="theme-color" content="#1e40af" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="/Bible/icons/icon-192x192.png" />
 
   <!-- Production Tailwind CSS (pre-compiled) -->
-  <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="/Bible/dist/styles.css" />
 
   <!-- FullCalendar CSS & JS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
@@ -131,11 +131,11 @@
   <!-- Register Service Worker & Main Script -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('/Bible/sw.js')
         .then(reg => console.log('SW registered', reg))
         .catch(err => console.error('SW failed', err));
     }
   </script>
-  <script src="js/script.js"></script>
+  <script src="/Bible/js/script.js"></script>
 </body>
 </html>
