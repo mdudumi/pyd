@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biblical-planner-v1';
+const CACHE_NAME = 'biblical-planner-v1.0001';
 const ASSETS = [
   '/',
   '/Bible/index.html',
