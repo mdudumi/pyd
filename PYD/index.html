@@ -9,13 +9,11 @@
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com?darkMode=class"></script>
   <style>
-    /* Hide mobile menu by default, show flags on desktop */
+    /* Hide mobile menu by default, show flags */
     .menu-button { display: none; }
     .flag-group { display: flex; gap: 0.5rem; }
-
-    /* Force all form text (including date/time) to black */
+    /* Force all form text to black */
     input, select { color: #000 !important; }
-
     /* Mobile adjustments */
     @media (max-width: 640px) {
       .header-title { font-size: 1.25rem !important; }
@@ -28,25 +26,19 @@
     }
   </style>
 </head>
-<body class="m-0 flex flex-col min-h-screen font-sans antialiased
-             bg-gradient-to-br from-gray-100 to-gray-300
-             dark:from-gray-900 dark:to-gray-800
-             text-black sm:text-gray-900 dark:text-gray-100">
+<body class="m-0 flex flex-col min-h-screen font-sans antialiased bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800 text-black sm:text-gray-900 dark:text-gray-100">
 
   <!-- HEADER -->
   <header class="sticky top-0 bg-blue-900 dark:bg-gray-900 backdrop-blur-md shadow-md z-10 w-full">
     <div class="w-full px-6 py-4 flex justify-between items-center padding-responsive">
-      <h1 class="header-title text-3xl font-extrabold text-black" data-i18n="heading">
+      <h1 class="header-title text-3xl font-extrabold text-white" data-i18n="heading">
         Plan Your Day - Spiritual Growth
       </h1>
-
       <div class="flex items-center space-x-2 relative">
         <!-- Mobile menu button -->
-        <button id="menu-btn" class="menu-button p-2 text-black focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16" />
+        <button id="menu-btn" class="menu-button p-2 text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
 
@@ -60,7 +52,7 @@
           <button class="flag" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-img"/></button>
         </div>
 
-        <!-- Mobile language menu (toggles on menu-btn click) -->
+        <!-- Mobile language menu -->
         <div id="mobile-lang-menu" class="hidden absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2">
           <button class="flag mb-2" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-img"/></button>
           <button class="flag mb-2" data-lang="sq"><img src="https://flagcdn.com/w20/al.png" alt="Shqip" class="flag-img"/></button>
@@ -80,7 +72,6 @@
   </header>
 
   <script>
-    // Toggle mobile language menu
     document.getElementById('menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-lang-menu').classList.toggle('hidden');
     });
@@ -90,17 +81,11 @@
   <main class="flex-1 w-full p-6 space-y-8 padding-responsive">
 
     <!-- ADD TASK PANEL -->
-    <section class="add-task-section bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg
-                   grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <input id="new-text" type="text" placeholder=""
-             data-i18n-placeholder="taskPlaceholder"
-             class="w-full col-span-2 p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition"/>
-      <input id="new-date" type="date"
-             class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition"/>
-      <input id="new-time" type="time"
-             class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition"/>
-      <select id="new-category"
-              class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
+    <section class="add-task-section bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <input id="new-text" type="text" placeholder="Enter task…" data-i18n-placeholder="taskPlaceholder" class="w-full col-span-2 p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition" />
+      <input id="new-date" type="date" placeholder="Select date" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition" />
+      <input id="new-time" type="time" placeholder="Select time" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition" />
+      <select id="new-category" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
         <option value="General" data-i18n="catGeneral">General</option>
         <option value="Reading" data-i18n="catReading">Reading</option>
         <option value="Prayer" data-i18n="catPrayer">Prayer</option>
@@ -108,30 +93,23 @@
         <option value="Outreach" data-i18n="catOutreach">Outreach</option>
         <option value="Family" data-i18n="catFamily">Family</option>
       </select>
-      <select id="new-priority"
-              class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
+      <select id="new-priority" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
         <option value="low" data-i18n="prioLow">Low</option>
         <option value="med" data-i18n="prioMed">Medium</option>
         <option value="high" data-i18n="prioHigh">High</option>
       </select>
-      <select id="new-repeat"
-              class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
+      <select id="new-repeat" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
         <option value="none" data-i18n="repeatNone">No Repeat</option>
         <option value="daily" data-i18n="repeatDaily">Daily</option>
         <option value="weekly" data-i18n="repeatWeekly">Weekly</option>
       </select>
-      <button id="add-btn"
-              class="w-full bg-orange-600 text-white font-semibold p-4 rounded-lg hover:bg-orange-700 transition"
-              data-i18n="addTask">Add Task</button>
+      <button id="add-btn" class="w-full bg-orange-600 text-white font-semibold p-4 rounded-lg hover:bg-orange-700 transition" data-i18n="addTask">Add Task</button>
     </section>
 
     <!-- SEARCH & FILTERS -->
-    <section class="filter-section bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg
-                   grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <input id="search" type="text" placeholder="" data-i18n-placeholder="searchPlaceholder"
-             class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition"/>
-      <select id="filter-category"
-              class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
+    <section class="filter-section bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <input id="search" type="text" placeholder="Search tasks…" data-i18n-placeholder="searchPlaceholder" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition" />
+      <select id="filter-category" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
         <option data-i18n="allCats">All Categories</option>
         <option data-i18n="catGeneral">General</option>
         <option data-i18n="catReading">Reading</option>
@@ -140,8 +118,7 @@
         <option data-i18n="catOutreach">Outreach</option>
         <option data-i18n="catFamily">Family</option>
       </select>
-      <select id="filter-priority"
-              class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
+      <select id="filter-priority" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 outline-none transition">
         <option data-i18n="allPrio">All Priorities</option>
         <option value="high" data-i18n="prioHigh">High</option>
         <option value="med" data-i18n="prioMed">Medium</option>
