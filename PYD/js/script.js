@@ -2,7 +2,7 @@
 const translations = {
   en: {
     title: 'Pyd Planner',
-    heading: 'Plan Your Day - Spiritual Growth',
+    heading: 'Plan Your Day',
     taskPlaceholder: 'Task title…',
     addTask: 'Add Task',
     searchPlaceholder: '🔍 Search tasks…',
@@ -27,7 +27,7 @@ const translations = {
   },
   sq: {
     title: 'Pyd Planner',
-    heading: 'Planifikoni Ditën - Disiplina Frymërore',
+    heading: 'Planifikoni Ditën',
     taskPlaceholder: 'Titulli i përkushtimit…',
     addTask: 'Shto Përkushtim',
     searchPlaceholder: '🔍 Kërko përkushtimet…',
@@ -52,7 +52,7 @@ const translations = {
   },
   it: {
     title: 'Pyd Planner',
-    heading: 'Pianifica la Giornata - Crescita Spirituale',
+    heading: 'Pianifica la Giornata',
     taskPlaceholder: 'Titolo attività…',
     addTask: 'Aggiungi Attività',
     searchPlaceholder: '🔍 Cerca attività…',
@@ -77,7 +77,7 @@ const translations = {
   },
   es: {
     title: 'Pyd Planner',
-    heading: 'Planifica tu Día - Crecimiento Espiritual',
+    heading: 'Planifica tu Día',
     taskPlaceholder: 'Título de la tarea…',
     addTask: 'Agregar Tarea',
     searchPlaceholder: '🔍 Buscar tareas…',
@@ -102,7 +102,7 @@ const translations = {
   },
   fr: {
     title: 'Pyd Planner',
-    heading: 'Planifiez Votre Journée - Croissance Spirituelle',
+    heading: 'Planifiez Votre Journée',
     taskPlaceholder: 'Titre de la tâche…',
     addTask: 'Ajouter Tâche',
     searchPlaceholder: '🔍 Rechercher tâches…',
@@ -127,7 +127,7 @@ const translations = {
   },
   de: {
     title: 'Pyd Planner',
-    heading: 'Plane deinen Tag - Spirituelles Wachstum',
+    heading: 'Plane deinen Tag',
     taskPlaceholder: 'Aufgabenname…',
     addTask: 'Aufgabe Hinzufügen',
     searchPlaceholder: '🔍 Aufgaben suchen…',
