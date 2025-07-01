@@ -1,4 +1,3 @@
---- **sw.js** ---
 const CACHE_NAME = 'biblical-planner-v1';
 const ASSETS = ['/', '/index.html', '/css/styles.css', '/js/script.js', 'json/manifest.json', '/icons/icon-192x192.png', '/icons/icon-512x512.png'];
 
